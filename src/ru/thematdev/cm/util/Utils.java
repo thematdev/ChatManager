@@ -21,6 +21,10 @@ public class Utils {
 		for (Player p: Bukkit.getServer().getOnlinePlayers()) p.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
 	}
 	
+	public static void broadcastMessage(String message, String emptyPart) {
+		for (Player p: Bukkit.getServer().getOnlinePlayers()) p.sendMessage(ChatColor.translateAlternateColorCodes('&', message) + emptyPart);
+	}
+	
 	public static void log(Level level, String message) {
 		System.out.println(message);
 	}

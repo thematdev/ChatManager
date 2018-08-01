@@ -17,7 +17,11 @@ public class MessageEditor implements Listener{
 		if (Utils.muted && (!p.hasPermission("cm.antitoggle"))) {
 			return;
 		}
-		Utils.broadcastMessage(Utils.getPlayerPrefix(p) + e.getPlayer().getName() + " " + Utils.getPlayerSuffix(p) + " " + e.getMessage());
+		if (!p.hasPermission("cm.colormessage")) {
+			Utils.broadcastMessage(Utils.getPlayerPrefix(p) + e.getPlayer().getName() + " " + Utils.getPlayerSuffix(p) + "⇛",  e.getMessage());
+			return;
+		}
+		Utils.broadcastMessage(Utils.getPlayerPrefix(p) + e.getPlayer().getName() + " " + Utils.getPlayerSuffix(p) + "⇛" + e.getMessage());
 	}
 
 }
