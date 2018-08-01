@@ -1,0 +1,12 @@
+name: Cm
+version: 0.2 ALPHA
+main: ru.thematdev.cm.main.Main
+description: ChatManager for infinity project
+author: thematdev
+commands:
+  chat:
+    usage: /<command> <arg1>
+    aliases: [cm]
+  automessage:
+    usage: /<command> <arg1>
+    aliases: [am]
