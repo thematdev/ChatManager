@@ -24,8 +24,8 @@ public class ChatExecutor implements CommandExecutor, Listener {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (!(sender instanceof Player)) return false;
 		if (args.length < 1) return false;
-		ChatCommand command = ChatCommand.getByName(args[0]);
-		command.call((Player) sender);
+		CommandEnum command = CommandEnum.valueOf(args[0]);
+		command.call((Player) sender, plugin);
 		
 		return true;
 	}
