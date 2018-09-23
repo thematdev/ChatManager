@@ -10,6 +10,8 @@ import ru.thematdev.cm.util.Utils;
 @SuppressWarnings("deprecation")
 public class MessageEditor implements Listener{
 	
+	/*
+	
 	@EventHandler
 	public void onChat(PlayerChatEvent e) {
 		Player p = e.getPlayer();
@@ -22,6 +24,6 @@ public class MessageEditor implements Listener{
 			return;
 		}
 		Utils.broadcastMessage(Utils.getPlayerPrefix(p) + e.getPlayer().getName() + " " + Utils.getPlayerSuffix(p) + "⇛" + e.getMessage());
-	}
+	} */
 
 }

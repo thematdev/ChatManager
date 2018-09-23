@@ -2,7 +2,8 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/Наталья/Desktop/1337/Программы/Сервера/Server Infinity/craftbukkit.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Наталья/Desktop/1337/Программы/Сервера/Server Infinity/plugins/PermissionsEx-1.23.4 (1).jar"/>
+	<classpathentry kind="lib" path="C:/Users/Наталья/Desktop/Банжа/BungeeCord/gson-2.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Наталья/Desktop/Банжа/testplugins/spigot-latest.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

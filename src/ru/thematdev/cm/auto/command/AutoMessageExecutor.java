@@ -15,7 +15,7 @@ public class AutoMessageExecutor implements CommandExecutor{
 	public AutoMessageExecutor(AutoMessage autoMessageInstance) {
 		this.autoMessageInstance = autoMessageInstance;
 	}
-
+	/*
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (args.length != 1) return false;
@@ -32,6 +32,14 @@ public class AutoMessageExecutor implements CommandExecutor{
 			autoMessageInstance.task.cancel();
 		}
 		return true;
+	} */
+
+	@Override
+	public boolean onCommand(CommandSender arg0, Command arg1, String arg2, String[] arg3) {
+		// TODO Auto-generated method stub
+		return false;
 	}
+	
+	
 
 }

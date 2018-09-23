@@ -1,42 +1,49 @@
 package ru.thematdev.cm.auto;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
-import org.bukkit.scheduler.BukkitRunnable;
-import org.bukkit.scheduler.BukkitTask;
-
-import ru.thematdev.cm.auto.command.AutoMessageExecutor;
+import ru.thematdev.cm.auto.notification.AdvancementNotification;
+import ru.thematdev.cm.auto.notification.ChatNotification;
+import ru.thematdev.cm.config.Configuration;
 import ru.thematdev.cm.main.Main;
-import ru.thematdev.cm.util.Utils;
 
 public class AutoMessage {
 	
 	Main plugin;
-	public int time;
-	public List<String> messageList;
-	
-	public BukkitTask task;
+	private Configuration configuration;
+    private List<ChatNotification> chatNotifications
+    = new ArrayList<>();
+    private List<AdvancementNotification> advancementNotifications
+    = new ArrayList<>();
 			
-	public AutoMessage(Main plugin) {
-		this.plugin = plugin;
+	public AutoMessage() {
 		
-		time = plugin.config.getInt("auto.time");
-		messageList = plugin.config.getStringList("auto.messages");
+		this.plugin = Main.instance();
 		
-		plugin.getCommand("automessage").setExecutor(new AutoMessageExecutor(this));
+		configuration = new Configuration();
 		
-		task = new BukkitRunnable() {
+		for (String node : configuration.getConfig().getConfigurationSection("auto.notifications.chat").getKeys(false)) {
+			plugin.getLogger().info(node);
 			
-			@Override
-			public void run() {
-				Random random = new Random();
-				Utils.broadcastMessage(messageList.get(random.nextInt(messageList.size())));
-				plugin.logger.info("AutoMessage by Cm!");
-			}
+			ChatNotification notification = new ChatNotification(node, configuration.config.getDouble(configuration.getChatSection() + "." + node + ".delay"),
+					configuration.config.getString(configuration.getChatSection() + "." + node + ".prefix"),
+					configuration.config.getStringList(configuration.getChatSection() + "." + node + ".messages"),
+					configuration.config.getBoolean(configuration.getChatSection() + "." + node + ".permission"));
+			System.out.println(configuration.config.getStringList(configuration.getChatSection() + "." + node + ".messages"));
+			//System.out.println(configuration.config. + "." + node + ".messages");
+			chatNotifications.add(notification);
 			
+		}
+		for (String node : configuration.config.getConfigurationSection("auto.notifications.advancement").getKeys(false)) {
 			
-		}.runTaskTimer(plugin, 0L, 20L * (time));
+			AdvancementNotification notification = new AdvancementNotification(node,
+					configuration.config.getDouble(configuration.getAdvSection() + "." + node + ".delay"),
+					configuration.config.getMapList(configuration.getAdvSection() + "." + node + ".messages"),
+					configuration.config.getBoolean(configuration.getAdvSection() + "." + node + ".permission"));
+			advancementNotifications.add(notification);
+		
+		}
 		
 	}
 

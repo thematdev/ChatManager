@@ -1,5 +1,6 @@
 package ru.thematdev.cm.main;
 
+
 import java.util.logging.Logger;
 
 import org.bukkit.configuration.file.FileConfiguration;
@@ -15,13 +16,23 @@ public class Main extends JavaPlugin{
 	public Logger logger;
 	public FileConfiguration config;
 	
+	private static Main instance;
+	
+	public static Main instance() {
+		return instance;
+	}
+	
 	public void onEnable() {
+		instance = Main.this;
+		
 		logger = getServer().getLogger();
 		logger.info("Cm by thematdev enabled!");
 		
 		config = getConfig();
 		
-		new AutoMessage(this);
+		System.out.println(config.getStringList("auto.notifications.chat.main.messages"));
+		
+		new AutoMessage();
 		
 		registerCommands();
 		registerEvents();
@@ -42,6 +53,10 @@ public class Main extends JavaPlugin{
 		
 		getCommand("chat").setExecutor(new ChatExecutor(this));
 		
+	}
+	
+	public FileConfiguration getConfigFile() {
+		return config;
 	}
 
 }

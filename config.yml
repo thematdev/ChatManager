@@ -1,5 +1,22 @@
 auto:
-  messages:
-  - 'Приветствуем Вас на сервере Infinity Project'
-  - 'Владелец проекта vk.com/thematdev'
-  time: 60
+  notifications:
+    chat:
+      main:
+        delay: 10
+        prefix: '[Test]'
+        messages:
+          - 'Autism!'
+          - 'Daun!'
+        permission: true
+    advancement:
+      main:
+        delay: 10
+        messages:
+          - icon: 'minecraft:diamond'
+            header: '228'
+            footer: '228'
+          - icon: 'minecraft:gold_ingot'
+            header: 'gay'
+            footer: 'gay'
+        permission: true 
+    

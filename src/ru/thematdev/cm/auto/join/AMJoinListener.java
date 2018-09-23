@@ -17,7 +17,7 @@ public class AMJoinListener implements Listener{
 		Player p = e.getPlayer();
 		p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 5, 5));
 		p.setVelocity(new Vector(10, 3, 1));
-		Utils.sendMessage(p, "&a Приветствуем Вас, " + Utils.getPlayerPrefix(p) + " " + p.getName() + " " + Utils.getPlayerSuffix(p) + "&a на нашем проекте!");
+		//Utils.sendMessage(p, "&a Приветствуем Вас, " + Utils.getPlayerPrefix(p) + " " + p.getName() + " " + Utils.getPlayerSuffix(p) + "&a на нашем проекте!");
 	}
 
 }

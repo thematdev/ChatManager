@@ -1,3 +1,4 @@
+api-version: 1.13
 name: Cm
 version: 0.2 ALPHA
 main: ru.thematdev.cm.main.Main
