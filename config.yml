@@ -13,10 +13,10 @@ auto:
         delay: 10
         messages:
           - icon: 'minecraft:diamond'
-            header: '228'
-            footer: '228'
+            header: 'Привет!'
+            footer: 'Спасибо, что играешь на сервере Infinity!'
           - icon: 'minecraft:gold_ingot'
-            header: 'gay'
-            footer: 'gay'
+            header: 'Тех.поддержка'
+            footer: 'vk.com/thematdev'
         permission: true
     
