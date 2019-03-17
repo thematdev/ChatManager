@@ -20,7 +20,6 @@ public class Configuration {
 		this.plugin = Main.instance();
 		
 		this.config = plugin.getConfigFile();
-		System.out.println("Прямо:" + config.getStringList("auto.notifications.chat.main.messages"));
 		
 		this.notificationSection = "auto.notifications";
 		this.chatSection = notificationSection + ".chat";

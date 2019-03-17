@@ -5,11 +5,11 @@ auto:
         delay: 10
         prefix: '[Test]'
         messages:
-          - 'Autism!'
+          - 'Govno!'
           - 'Daun!'
         permission: true
     advancement:
-      main:
+      main2:
         delay: 10
         messages:
           - icon: 'minecraft:diamond'
@@ -18,5 +18,5 @@ auto:
           - icon: 'minecraft:gold_ingot'
             header: 'gay'
             footer: 'gay'
-        permission: true 
+        permission: true
     

@@ -8,7 +8,7 @@ import ru.thematdev.cm.main.Main;
 
 public abstract class Notification {
 	
-	public static final String NOTIFICATION_NODE = "cm.auto.notification";
+	public static final String NOTIFICATION_NODE = "cm.auto.notification.";
 
     
     public BukkitTask task;

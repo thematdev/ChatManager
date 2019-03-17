@@ -23,20 +23,9 @@ public class AutoMessage {
 		
 		configuration = new Configuration();
 		
-		for (String node : configuration.getConfig().getConfigurationSection("auto.notifications.chat").getKeys(false)) {
-			plugin.getLogger().info(node);
-			
-			ChatNotification notification = new ChatNotification(node, configuration.config.getDouble(configuration.getChatSection() + "." + node + ".delay"),
-					configuration.config.getString(configuration.getChatSection() + "." + node + ".prefix"),
-					configuration.config.getStringList(configuration.getChatSection() + "." + node + ".messages"),
-					configuration.config.getBoolean(configuration.getChatSection() + "." + node + ".permission"));
-			System.out.println(configuration.config.getStringList(configuration.getChatSection() + "." + node + ".messages"));
-			//System.out.println(configuration.config. + "." + node + ".messages");
-			chatNotifications.add(notification);
-			
-		}
+		configuration.getConfig().getConfigurationSection("auto.notifications.chat").getKeys(false).forEach(node -> chatNotifications.add(configuration.getChatNotificationByNode(node)));
 		for (String node : configuration.config.getConfigurationSection("auto.notifications.advancement").getKeys(false)) {
-			
+			plugin.getLogger().info("123");
 			AdvancementNotification notification = new AdvancementNotification(node,
 					configuration.config.getDouble(configuration.getAdvSection() + "." + node + ".delay"),
 					configuration.config.getMapList(configuration.getAdvSection() + "." + node + ".messages"),
