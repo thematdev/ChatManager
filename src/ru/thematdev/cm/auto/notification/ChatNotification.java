@@ -29,8 +29,6 @@ public class ChatNotification extends Notification{
 	@Override
 	public void run() {
 		
-		plugin.getLogger().info("PERMISSION NODE IS " + PERMISSION_NODE);
-		
 		if (current < 0 || messages.size() <= ++current) current = 0;
 		if (messages.isEmpty()) {
 			plugin.getLogger().info("Empty");
@@ -43,8 +41,6 @@ public class ChatNotification extends Notification{
         .forEach(player -> player.sendMessage(message));
         
         plugin.getLogger().info("Chat Notification " + name);
-		
-		
 	}
 
 }
