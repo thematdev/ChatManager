@@ -1,8 +1,8 @@
 api-version: 1.13
 name: Cm
-version: 0.2 ALPHA
+version: ALPHA 5.0.3
 main: ru.thematdev.cm.main.Main
-description: ChatManager for infinity project
+description: ChatManager for Minecraft 1.13-1.132
 author: thematdev
 commands:
   chat:

@@ -3,10 +3,8 @@ package ru.thematdev.cm.auto.command;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 import ru.thematdev.cm.auto.AutoMessage;
-import ru.thematdev.cm.util.Utils;
 
 public class AutoMessageExecutor implements CommandExecutor{
 	

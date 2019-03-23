@@ -2,16 +2,18 @@ package ru.thematdev.cm.config;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
+import lombok.Getter;
+import lombok.Setter;
 import ru.thematdev.cm.auto.notification.AdvancementNotification;
 import ru.thematdev.cm.auto.notification.ChatNotification;
 import ru.thematdev.cm.main.Main;
 
 public class Configuration {
 	
-	public FileConfiguration config;
-	private String notificationSection;
-	private String chatSection;
-	private String advSection;
+	@Getter @Setter public FileConfiguration config;
+	@Getter private String notificationSection;
+	@Getter private String chatSection;
+	@Getter private String advSection;
 	
 	private Main plugin;
 	
@@ -25,24 +27,6 @@ public class Configuration {
 		this.chatSection = notificationSection + ".chat";
 		this.advSection = notificationSection + ".advancement";
 		
-	}
-
-	public FileConfiguration getConfig() {
-		return config;
-	}
-
-	public void setConfig(FileConfiguration config) {
-		this.config = config;
-	}
-
-	public String getNotificationSection() {
-		return notificationSection;
-	}
-	public String getChatSection() {
-		return chatSection;
-	}
-	public String getAdvSection() {
-		return advSection;
 	}
 	
 	public ChatNotification getChatNotificationByNode(String node) {

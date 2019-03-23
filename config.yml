@@ -5,18 +5,18 @@ auto:
         delay: 10
         prefix: '[Test]'
         messages:
-          - 'Govno!'
-          - 'Daun!'
+          - 'Test!'
+          - 'Test2!'
         permission: true
     advancement:
-      main2:
+      main:
         delay: 10
         messages:
           - icon: 'minecraft:diamond'
-            header: 'Привет!'
-            footer: 'Спасибо, что играешь на сервере Infinity!'
+            header: 'Hi!'
+            footer: 'Thanks for using ChatManager by thematdev'
           - icon: 'minecraft:gold_ingot'
-            header: 'Тех.поддержка'
+            header: 'Support'
             footer: 'vk.com/thematdev'
         permission: true
     
