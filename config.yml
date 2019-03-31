@@ -12,11 +12,11 @@ auto:
       main:
         delay: 10
         messages:
-          - icon: 'minecraft:diamond'
-            header: 'Hi!'
-            footer: 'Thanks for using ChatManager by thematdev'
+          - icon: 'minecraft:bedrock'
+            header: 'This is...'
+            footer: 'ChatManager plugin by thematdev'
           - icon: 'minecraft:gold_ingot'
-            header: 'Support'
+            header: 'Donate us!'
             footer: 'vk.com/thematdev'
         permission: true
     

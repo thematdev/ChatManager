@@ -9,6 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import ru.thematdev.cm.auto.AutoMessage;
 import ru.thematdev.cm.auto.join.AMJoinListener;
 import ru.thematdev.cm.command.ChatExecutor;
+import ru.thematdev.cm.config.BukkitConfigurationYaml;
 import ru.thematdev.cm.prefix.MessageEditor;
 
 public class Main extends JavaPlugin{
@@ -32,7 +33,7 @@ public class Main extends JavaPlugin{
 		
 		System.out.println(config.getStringList("auto.notifications.chat.main.messages"));
 		
-		new AutoMessage();
+		new AutoMessage(new BukkitConfigurationYaml("config.yml"));
 		
 		registerCommands();
 		registerEvents();
