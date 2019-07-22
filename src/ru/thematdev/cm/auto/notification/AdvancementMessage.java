@@ -12,9 +12,8 @@ import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.entity.Player;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 
 import ru.thematdev.cm.main.Main;
 import ru.thematdev.cm.util.Utils;
@@ -37,6 +36,8 @@ public class AdvancementMessage implements ConfigurationSerializable{
         this.footer = footer;
         this.icon = icon;
         this.plugin = Main.instance();
+        
+
 
         this.id = new NamespacedKey(plugin, "thematdev" + new Random().nextInt(2281337) + 1);
     }

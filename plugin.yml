@@ -1,8 +1,8 @@
 api-version: 1.13
 name: Cm
-version: ALPHA 5.0.3
+version: ALPHA 5.0.4
 main: ru.thematdev.cm.main.Main
-description: ChatManager for Minecraft 1.13-1.132
+description: ChatManager for Minecraft 1.13-1.13.2
 author: thematdev
 commands:
   chat:
@@ -11,3 +11,5 @@ commands:
   automessage:
     usage: /<command> <arg1>
     aliases: [am]
+  sendnfc:
+    usage: /<command> <arg1> <arg2> <arg3>

@@ -6,7 +6,6 @@ import java.util.List;
 import ru.thematdev.cm.auto.notification.AdvancementNotification;
 import ru.thematdev.cm.auto.notification.ChatNotification;
 import ru.thematdev.cm.config.BukkitConfigurationYaml;
-import ru.thematdev.cm.config.ConfigurationTemp;
 import ru.thematdev.cm.config.YamlConfigurationNode;
 import ru.thematdev.cm.main.Main;
 

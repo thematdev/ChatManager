@@ -3,20 +3,19 @@ auto:
     chat:
       main:
         delay: 10
-        prefix: '[Test]'
+        prefix: '&2[ChatManager by thematdev]'
         messages:
-          - 'Test!'
-          - 'Test2!'
+          - 'This server is using ChatManager'
+          - 'github.com/thematdev/ChatManager'
         permission: true
     advancement:
       main:
         delay: 10
         messages:
           - icon: 'minecraft:bedrock'
-            header: 'This is...'
-            footer: 'ChatManager plugin by thematdev'
+            header: 'Advancements is simple...'
+            footer: 'Just use ChatManager'
           - icon: 'minecraft:gold_ingot'
-            header: 'Donate us!'
-            footer: 'vk.com/thematdev'
+            header: 'thematdev'
+            footer: 'Write ChatManager'
         permission: true
-    

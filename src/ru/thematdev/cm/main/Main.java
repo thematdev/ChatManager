@@ -1,21 +1,18 @@
 package ru.thematdev.cm.main;
 
 
-import java.util.logging.Logger;
+import java.io.File;
 
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import ru.thematdev.cm.auto.AutoMessage;
 import ru.thematdev.cm.auto.join.AMJoinListener;
 import ru.thematdev.cm.command.ChatExecutor;
+import ru.thematdev.cm.command.send.SendCommandExecutor;
 import ru.thematdev.cm.config.BukkitConfigurationYaml;
 import ru.thematdev.cm.prefix.MessageEditor;
 
 public class Main extends JavaPlugin{
-	
-	public Logger logger;
-	public FileConfiguration config;
 	
 	private static Main instance;
 	
@@ -26,21 +23,17 @@ public class Main extends JavaPlugin{
 	public void onEnable() {
 		instance = Main.this;
 		
-		logger = getServer().getLogger();
-		logger.info("Cm by thematdev enabled!");
+		getLogger().info("ChatManager by thematdev enabled!");
 		
-		config = getConfig();
-		
-		System.out.println(config.getStringList("auto.notifications.chat.main.messages"));
-		
-		new AutoMessage(new BukkitConfigurationYaml("config.yml"));
-		
+		registerConfig();
 		registerCommands();
 		registerEvents();
+		
+		new AutoMessage(new BukkitConfigurationYaml());
 	}
 	
 	public void onDisable() {
-		logger.info("Cm by thematdev disabled!");
+		getLogger().info("ChatManager by thematdev disabled!");
 	}
 	
 	public void registerEvents() {
@@ -53,11 +46,20 @@ public class Main extends JavaPlugin{
 	public void registerCommands() {
 		
 		getCommand("chat").setExecutor(new ChatExecutor(this));
+		getCommand("sendnfc").setExecutor(new SendCommandExecutor());
 		
 	}
 	
-	public FileConfiguration getConfigFile() {
-		return config;
+	public void registerConfig() {
+		
+		File configFile = new File(getDataFolder(), "config.yml");
+		if (!configFile.exists()) {
+			getLogger().warning("Config file was not found!");
+			getLogger().warning("Loading default config...");
+			saveDefaultConfig();
+			reloadConfig();
+			getLogger().info("Default config was loaded successful!");
+		}
 	}
 
 }

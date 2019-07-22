@@ -36,7 +36,7 @@ public class ChatNotification extends Notification{
 			return;
 		}
 		
-		String[] message = Utils.COLORIZE.apply(prefix + messages.get(current)).split("(?<!\\\\)\\\\n");
+		String[] message = Utils.COLORIZE.apply(prefix + " " + messages.get(current)).split("(?<!\\\\)\\\\n");
         Reflection.getOnlinePlayers().stream().filter(player -> permission || player.hasPermission(String.format(PERMISSION_NODE, name)))
         .forEach(player -> player.sendMessage(message));
         

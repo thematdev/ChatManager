@@ -28,7 +28,7 @@ public class ChatExecutor implements CommandExecutor, Listener {
 			CommandEnum command = CommandEnum.valueOf(args[0]);
 			command.call((Player) sender, plugin);
 		} catch (Exception e) {
-			Utils.sendMessage((Player) sender, "&4Неккоректное использование команды!");
+			Utils.sendMessage((Player) sender, "&4Некоректное использование команды!");
 		}
 		return true;
 	}

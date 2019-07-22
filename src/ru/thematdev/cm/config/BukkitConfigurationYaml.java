@@ -4,11 +4,11 @@ import java.io.File;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import lombok.Getter;
 import ru.thematdev.cm.main.Main;
 
 public class BukkitConfigurationYaml extends ConfigurationYaml {
 	
+	@SuppressWarnings("unused")
 	private final String filename;
 	private YamlConfiguration config;
 	private Main plugin;
@@ -18,6 +18,12 @@ public class BukkitConfigurationYaml extends ConfigurationYaml {
 		this.plugin = Main.instance();
 		File file = new File(plugin.getDataFolder(), filename);
 		this.config = YamlConfiguration.loadConfiguration(file);
+	}
+	
+	public BukkitConfigurationYaml() {
+		this.filename = "plugin.yml";
+		this.plugin = Main.instance();
+		this.config = (YamlConfiguration) plugin.getConfig();
 	}
 
 	@Override
